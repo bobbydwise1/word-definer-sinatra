@@ -39,7 +39,7 @@ class Word
     item_name = word_string
     @@list.each do |item|
       if item.dictionary_word == item_name
-        return item_name.definition_formal
+        return item.definition_formal
       end
     end
     return false
