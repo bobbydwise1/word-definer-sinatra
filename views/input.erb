@@ -18,7 +18,7 @@
 <div class="container">
   <% Word.all.each do |x| %>
   <div class="output-form-box">
-    <a href="/word<%= x.id %>" value="<%= x.dictionary_word %>"><%= x.dictionary_word %></a><br>
+    <a action="get" href="/word/:<%= x.id %>" value="<%= x.dictionary_word %>"><%= x.dictionary_word %></a><br>
   </div>
 
   <% end %>

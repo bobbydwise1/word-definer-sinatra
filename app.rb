@@ -19,11 +19,11 @@ post ('/user_input') do
   erb(:input)
 end
 
-# get ('/contact:id') do
-  get ('/word:id') do
-  out_word = Word.find_id(params[:id])
+get ('/word/:id') do
+  id = params[:id]
+  out_word = Word.find_id(id)
   @output_word = out_word.dictionary_word
   @output_def = out_word.definition_formal
-
-  erb(:showdef)
+  binding.pry
+  erb(:output)
 end
