@@ -6,7 +6,7 @@ class Word
   def initialize(attributes)
     @id = @@list.length + 1
     @dictionary_word = attributes.fetch(:dictionary_word)
-    @definition_formal = attributes.fetch(:definition_formal)
+    @definition_formal = [attributes.fetch(:definition_formal)]
   end
 
   def self.all
@@ -26,20 +26,30 @@ class Word
   end
 
   def self.find_word(word_string)
-    word_string = dictionary_word
-    @@list.each do |word|
-      if word.dictionary_word == word_string
-        return word_string
+    item_name = word_string
+    @@list.each do |item|
+      if item.dictionary_word == item_name
+        return item_name
       end
     end
     return false
   end
 
   def self.find_defs(word_string)
-    word_string = dictionary_word
-    @@list.each do |word|
-      if word.dictionary_word == word_string
-        return word.definition_formal
+    item_name = word_string
+    @@list.each do |item|
+      if item.dictionary_word == item_name
+        return item_name.definition_formal
+      end
+    end
+    return false
+  end
+
+  def self.add_def(word_string,new_def_string)
+    item_name = word_string
+    @@list.each do |item|
+      if item.dictionary_word == item_name
+        item.definition_formal.push(new_def_string)
       end
     end
     return false
