@@ -3,11 +3,11 @@
   <form action="/user_input" method="post">
     <div>
       <label for="word">Enter a word:</label>
-      <input type="text" name="word">
+      <input type="text" name="word" pattern="[A-za-z]{1,20}" title="Enter a word">
     </div>
     <div>
       <label for="definition">Enter the definition:</label>
-      <input type="text" name="definition">
+      <input type="text" name="definition" pattern="[a-zA-Z\s\.0-9]{1,255}" title="Enter a definition">
     </div>
     <div class="button">
     <button type="button-default button submit" name="button">Create</button>
@@ -18,7 +18,7 @@
 <div class="container">
   <% Word.all.each do |x| %>
   <div class="output-form-box">
-    <a href="/word<%= x.id %>"><%= x.dictionary_word %></a><br>
+    <a href="/word<%= x.id %>" value="<%= x.dictionary_word %>"><%= x.dictionary_word %></a><br>
   </div>
 
   <% end %>

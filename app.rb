@@ -5,14 +5,12 @@ require('./lib/word')
 require('pry')
 
 get ('/') do
-  @contact = ''
   Word.clear
   erb(:input)
 end
 
 post ('/user_input') do
   new_word = Hash.new()
-
   new_word.store(:dictionary_word, params.fetch("word"))
   new_word.store(:definition_formal, params.fetch("definition"))
 
@@ -27,5 +25,5 @@ end
   @output_word = out_word.dictionary_word
   @output_def = out_word.definition_formal
 
-  erb(:input)
+  erb(:showdef)
 end
