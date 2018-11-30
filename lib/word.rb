@@ -55,4 +55,15 @@ class Word
     return false
   end
 
+  def self.all_pretty #Turns the @@list into a non-object array for testing
+    temp_output_array = []
+    @@list.each do |item|
+      temp_array = []
+      temp_array.push(item.dictionary_word)
+      temp_array.push(item.definition_formal)
+      temp_output_array.push(temp_array)
+    end
+    return temp_output_array
+  end
+
 end
