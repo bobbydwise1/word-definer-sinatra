@@ -1,0 +1,31 @@
+<div class="container input-form-box">
+  <h4>Enter Contact Information:</h4>
+  <form action="/user_input" method="post">
+    <div>
+      <label for="word">First Name:</label>
+      <input type="text" name="word">
+    </div>
+    <div>
+      <label for="definition">Last Name:</label>
+      <input type="text" name="definition">
+    </div>
+    <div class="button">
+    <button type="button-default button submit" name="button">Create</button>
+    </div>
+  </form>
+</div>
+
+<div class="container">
+  <% Word.all.each do |x| %>
+  <div class="output-form-box">
+    <a href="/contact<%= x.id %>"><%= x.word %></a><br>
+  </div>
+
+  <% end %>
+</div>
+
+
+<div class="container input-form-box">
+  <h1>Contact Information:</h1>
+  <p><%= @word %> <%= @definition %></p>
+</div>
