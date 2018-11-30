@@ -1,12 +1,12 @@
 <div class="container input-form-box">
-  <h4>Enter Contact Information:</h4>
+  <h4>Enter a word:</h4>
   <form action="/user_input" method="post">
     <div>
-      <label for="word">First Name:</label>
+      <label for="word">Enter a word:</label>
       <input type="text" name="word">
     </div>
     <div>
-      <label for="definition">Last Name:</label>
+      <label for="definition">Enter the definition:</label>
       <input type="text" name="definition">
     </div>
     <div class="button">
@@ -18,7 +18,7 @@
 <div class="container">
   <% Word.all.each do |x| %>
   <div class="output-form-box">
-    <a href="/contact<%= x.id %>"><%= x.word %></a><br>
+    <a href="/word<%= x.id %>"><%= x.dictionary_word %></a><br>
   </div>
 
   <% end %>
@@ -27,5 +27,5 @@
 
 <div class="container input-form-box">
   <h1>Contact Information:</h1>
-  <p><%= @word %> <%= @definition %></p>
+  <p><%= @output_word %> <%= @output_def %></p>
 </div>

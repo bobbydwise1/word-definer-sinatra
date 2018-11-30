@@ -1,6 +1,6 @@
 class Word
   @@list = []
-
+  attr_reader :id
   attr_accessor :dictionary_word, :definition_formal
 
   def initialize(attributes)
@@ -29,7 +29,7 @@ class Word
     item_name = word_string
     @@list.each do |item|
       if item.dictionary_word == item_name
-        return item_name
+        return true
       end
     end
     return false
