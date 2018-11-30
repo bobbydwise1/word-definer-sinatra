@@ -13,14 +13,22 @@
     <button type="button-default button submit" name="button">Create</button>
     </div>
   </form>
+  <form action="/user_clear" method="post">
+    </div>
+    <div class="button">
+    <button type="button-default button" name="clear">clear</button>
+    </div>
+  </form>
 </div>
 
 <div class="container">
-  <% Word.all.each do |x| %>
+  <% Word.all.each do |single_word| %>
   <div class="output-form-box">
-    <a action="get" href="/word/:<%= x.id %>" value="<%= x.dictionary_word %>"><%= x.dictionary_word %></a><br>
+    <form action="/word/<%= single_word.id %>" method="post">
+    <h1><%= single_word.dictionary_word %></h1>
+    <button type="btn-primay btn" name="select" value="<%= single_word.id %>">Edit word: <%= single_word.dictionary_word %></button>
+    </form>
   </div>
-
   <% end %>
 </div>
 

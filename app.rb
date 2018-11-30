@@ -6,7 +6,6 @@ require ('rspec')
 require ('pry')
 
 get ('/') do
-  # Word.clear
   erb(:input)
 end
 
@@ -20,7 +19,12 @@ post ('/user_input') do
   erb(:input)
 end
 
-get ('/word/:id') do
+post ('/user_clear') do
+  Word.clear
+  erb(:input)
+end
+
+post ('/word/:id') do
   id = params[:id]
   out_word = Word.find_id(id)
   @output_word = out_word.dictionary_word
