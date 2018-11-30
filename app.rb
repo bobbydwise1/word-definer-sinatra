@@ -2,10 +2,11 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/word')
-require('pry')
+require ('rspec')
+require ('pry')
 
 get ('/') do
-  Word.clear
+  # Word.clear
   erb(:input)
 end
 
@@ -24,6 +25,5 @@ get ('/word/:id') do
   out_word = Word.find_id(id)
   @output_word = out_word.dictionary_word
   @output_def = out_word.definition_formal
-  binding.pry
-  erb(:output)
+  erb(:input)
 end
