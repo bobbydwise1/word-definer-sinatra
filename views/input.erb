@@ -3,11 +3,11 @@
   <form action="/user_input" method="post">
     <div>
       <label for="word">Enter a new word:</label>
-      <input class="form-control" type="text" name="word" pattern="[A-za-z]{1,20}">
+      <input id="word" class="form-control" type="text" name="word" pattern="[A-za-z]{1,20}">
     </div>
     <div>
       <label for="definition">Enter the definition for the above word:</label>
-      <input class="form-control" type="text" name="definition" pattern="[a-zA-Z\s\.0-9]{1,255}">
+      <input id="definition" class="form-control" type="text" name="definition" pattern="[a-zA-Z\s\.0-9]{1,255}">
     </div>
     <div class="button">
     <button type="button-default button submit" name="button" title="Add a new word to the list!">Create</button>
