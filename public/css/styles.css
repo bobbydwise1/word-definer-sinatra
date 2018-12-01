@@ -35,3 +35,7 @@ body {
   margin: 10px;
   text-align: left;
 }
+
+button {
+  padding: 10px;
+}

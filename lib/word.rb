@@ -29,7 +29,7 @@ class Word
     item_name = word_string
     @@list.each do |item|
       if item.dictionary_word == item_name
-        return true
+        return item.dictionary_word
       end
     end
     return false
