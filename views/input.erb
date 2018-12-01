@@ -34,7 +34,7 @@
   <h4>Words you can view:</h4>
   <% Word.all.each do |single_word| %>
   <div class="edit-form-box-sub">
-    <form action="/word<%= single_word.id %>" method="get">
+    <form action="/worddef<%= single_word.id %>" method="get">
     <h6><%= single_word.dictionary_word %></h6>
     <button type="button-primay button" name="select" value="<%= single_word.id %>">Edit word: <%= single_word.dictionary_word %></button>
     </form>

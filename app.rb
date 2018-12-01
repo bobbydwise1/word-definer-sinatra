@@ -24,14 +24,10 @@ post ('/user_clear') do
   erb(:input)
 end
 
-# post ('/word:id') do
-#   id = params[:id]
-#   out_word = Word.find_id(id)
-#   @output_word = out_word.dictionary_word
-#   @output_def = out_word.definition_formal
-#   erb(:input)
-# end
-
-get ('/word:id') do
-  erb(:output)
+get ('/worddef:id') do
+  id = params[:id]
+  out_word = Word.find_id(id)
+  @output_word = out_word.dictionary_word
+  @output_def = out_word.definition_formal
+  erb(:worddef)
 end
