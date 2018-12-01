@@ -14,7 +14,7 @@ Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
 describe('website testing', {:type => :feature}) do
-  it('user input favorite item to list') do
+  it('User adds some new words and defs to list') do
     visit('/')
     fill_in('user_input', :with => 'dog')
     click_button('Submit')

@@ -24,12 +24,6 @@
   </form>
 </div>
 
-<div class="container output-form-box">
-  <h6>The word you tried to edit:</h6>
-  <p> <%= @output_word %> </p>
-  <p> <%= @output_def %> </p>
-</div>
-
 <div class="container edit-form-box">
   <h5>Words you can view:</h5>
   <% Word.all.each do |single_word| %>

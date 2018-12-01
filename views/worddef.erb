@@ -1,12 +1,14 @@
 <div class="container output-form-box">
   <h4>The word you have picked is:</h4>
   <h2> <%= @output_word %> </h2>
-  <p> Debug: This is ID # <%= @temp_id %> </p>
-  <p> <%= @output_def %> </p>
+  <!-- <p> Debug: This is ID # <%= @temp_id %> </p> -->
+  <% @output_def.each do |defs| %>
+  <p><i> <%= defs %> </i><p>
+  <% end %>
 </div>
 <div class="container input-form-box">
   <h4>Enter a word:</h4>
-  <form action="/addnewdef" method="post">
+  <form action="/worddef<%= @temp_id %>" method="post">
     <div>
       <label for="definition">Enter another definition:</label>
       <input class="form-control" type="text" name="definition" pattern="[^\s][a-zA-Z\s\.0-9]{1,255}" title="Enter a definition">

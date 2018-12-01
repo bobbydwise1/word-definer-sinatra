@@ -37,10 +37,10 @@ body {
 }
 
 button {
-  padding: 10px;
+  padding: 5px;
 }
 
 input[type=text] {
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
 }

@@ -27,13 +27,13 @@ end
 get ('/worddef:id') do
   id = params[:id]
   temp_word = Word.find_id(id)
+  @temp_id = id
   @output_word = temp_word.dictionary_word
   @output_def = temp_word.definition_formal
   erb(:worddef)
 end
 
-post ('/addnewdef:id') do
-  "hello world"
+post ('/worddef:id') do
   id = params[:id]
   temp_word = Word.find_id(id)
   button_select = params.fetch('select')
@@ -42,12 +42,12 @@ post ('/addnewdef:id') do
     Word.add_def(temp_word.dictionary_word,temp_def)
     @output_word = temp_word.dictionary_word
     @output_def = temp_word.definition_formal
-    # @temp_id = id
+    @temp_id = id
     erb(:worddef)
   elsif button_select == "back"
     @output_word = temp_word.dictionary_word
     @output_def = temp_word.definition_formal
-    # @temp_id = id
+    @temp_id = id
     erb(:input)
   else
     return false
