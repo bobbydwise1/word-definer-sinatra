@@ -1,13 +1,13 @@
 <div class="container input-form-box">
-  <h4>Enter a word:</h4>
+  <h5>Define brand new words here:</h5>
   <form action="/user_input" method="post">
     <div>
-      <label for="word">Enter a word:</label>
-      <input class="form-control" type="text" name="word" pattern="[A-za-z]{1,20}" title="Enter a word">
+      <label for="word">Enter a new word:</label>
+      <input class="form-control" type="text" name="word" pattern="[A-za-z]{1,20}">
     </div>
     <div>
-      <label for="definition">Enter the definition:</label>
-      <input class="form-control" type="text" name="definition" pattern="[a-zA-Z\s\.0-9]{1,255}" title="Enter a definition">
+      <label for="definition">Enter the definition for the above word:</label>
+      <input class="form-control" type="text" name="definition" pattern="[a-zA-Z\s\.0-9]{1,255}">
     </div>
     <div class="button">
     <button type="button-default button submit" name="button" title="Add a new word to the list!">Create</button>
@@ -18,26 +18,28 @@
 <div class="container input-form-box">
   <form action="/user_clear" method="post">
     <div class="button">
-      <label for="clear">Delete your List! </label>
+      <label for="clear"><b>Click this button if you want to delete the list below!</b></label>
       <button type="button-default button" name="clear" title="Careful!  This will delete your word list!">Clear!</button>
     </div>
   </form>
 </div>
 
-
 <div class="container output-form-box">
-  <h4>The word you clicked on:</h4>
-  <p><%= @output_word %> <%= @output_def %></p>
+  <h6>The word you tried to edit:</h6>
+  <p> <%= @output_word %> </p>
+  <p> <%= @output_def %> </p>
 </div>
 
 <div class="container edit-form-box">
-  <h4>Words you can view:</h4>
+  <h5>Words you can view:</h5>
   <% Word.all.each do |single_word| %>
-  <div class="edit-form-box-sub">
-    <form action="/worddef<%= single_word.id %>" method="get">
-    <h6><%= single_word.dictionary_word %></h6>
-    <button type="button-primay button" name="select" value="<%= single_word.id %>">Edit word: <%= single_word.dictionary_word %></button>
-    </form>
+  <div class="edit-form-box-sub container">
+    <div class="row">
+      <form action="/worddef<%= single_word.id %>" method="get">
+      <h6><%= single_word.dictionary_word %></h6>
+      <button type="button-primay button" name="select" value="<%= single_word.id %>">Edit word: <%= single_word.dictionary_word %></button>
+      </form>
+    </div>
   </div>
   <% end %>
 </div>

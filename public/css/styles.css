@@ -39,3 +39,8 @@ body {
 button {
   padding: 10px;
 }
+
+input[type=text] {
+  padding: 10px;
+  margin: 10px;
+}

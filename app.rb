@@ -24,7 +24,7 @@ post ('/user_clear') do
   erb(:input)
 end
 
-get ('/worddef/:id') do
+get ('/worddef:id') do
   id = params[:id]
   temp_word = Word.find_id(id)
   @output_word = temp_word.dictionary_word
@@ -32,12 +32,24 @@ get ('/worddef/:id') do
   erb(:worddef)
 end
 
-post ('/worddef/:id') do
+post ('/addnewdef:id') do
+  "hello world"
   id = params[:id]
-  temp_word = Word.all[id-1].dictionary_word
+  temp_word = Word.find_id(id)
+  button_select = params.fetch('select')
   temp_def = params.fetch("definition")
-  Word.add_def(temp_word,temp_def)
-  @output_word = Word.all[id-1].dictionary_word
-  @output_def = Word.all[id-1].definition_formal
-  erb(:worddef)
+  if button_select == "newdef"
+    Word.add_def(temp_word.dictionary_word,temp_def)
+    @output_word = temp_word.dictionary_word
+    @output_def = temp_word.definition_formal
+    # @temp_id = id
+    erb(:worddef)
+  elsif button_select == "back"
+    @output_word = temp_word.dictionary_word
+    @output_def = temp_word.definition_formal
+    # @temp_id = id
+    erb(:input)
+  else
+    return false
+  end
 end
