@@ -1,4 +1,20 @@
 <div class="container">
-  <p>you made it</p>
-  <p> <%= @output_word %> <%= @output_def %> </p>
+  <p>The word you have picked is:</p>
+  <h2> <%= @output_word %> </h2>
+  <p> <%= @output_def %> </p>
+  <div class="container input-form-box">
+    <h4>Enter a word:</h4>
+    <form action="/def_input" method="post">
+      <div>
+        <label for="definition">Enter another definition:</label>
+        <input type="text" name="definition" pattern="[a-zA-Z\s\.0-9]{1,255}" title="Enter a definition">
+      </div>
+      <div class="button">
+      <button type="button-default button submit" name="button" title="Add another definition to the list!">Submit new definition</button>
+      </div>
+    </form>
+  </div>
+
+  <a href="/">Don't do anything, and Go back!</a>
+
 </div>

@@ -15,7 +15,9 @@ _Create a website application that allows children to write a list of words they
 * Your computer must have Ruby installed.  In the terminal window at the working directory of the program, you will need to install some addtional Ruby Gems files.  Do this by putting this on the command line while connected to the internet:
   "$ bundle install
 * To run the test cases, type at the terminal: $ rspec
-*
+* To run the program itself, go to the command line, and set the current working directory the same as the project's folder.
+* Type $ ruby app.rb at the terminal
+* Open your web browser and head to https://localhost:4567 to start the application.
 
 ## Technologies Used
 
@@ -68,7 +70,8 @@ _Ruby, Sinatra framework, Atom, , HTML, Git._
 
 ## Known bugs
 
-* Type any known bugs here
+* Currently, you can't add new definitions to an existing word.
+* Integration spec testing is currently unfinished.
 
 ### License
 

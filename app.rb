@@ -31,3 +31,11 @@ get ('/worddef:id') do
   @output_def = out_word.definition_formal
   erb(:worddef)
 end
+
+post ('/def_input') do
+  temp_def = params.fetch("definition")
+  Word.add_def(@output_word,temp_def)
+  @output_word
+  @output_def = Word.all_pretty
+  erb(:worddef)
+end
