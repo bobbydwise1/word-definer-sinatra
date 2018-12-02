@@ -1,4 +1,5 @@
 require('word')
+require('capybara')
 require('capybara/rspec')
 require('./app')
 
@@ -14,7 +15,7 @@ describe('website testing', {:type => :feature}) do
     fill_in('word', :with => 'cat')
     fill_in('definition', :with => 'A meower.')
     click_button('Create')
-    expect(page).to have_content('dog')  ##This is not a static element, and capybara can't find it.
+    expect(page).to have_content("dog")  ##fails here
   end
 
   it('Go to word definition page') do
@@ -25,7 +26,7 @@ describe('website testing', {:type => :feature}) do
     fill_in('word', :with => 'cat')
     fill_in('definition', :with => 'A meower.')
     click_button('Create')
-    click_button('Edit word: dog')  ##This is not a static element, and capybara can't find it.
+    click_button('Edit word: dog')  ##fails here
     expect(page).to have_content('The word you have picked is:')
   end
 
@@ -37,7 +38,7 @@ describe('website testing', {:type => :feature}) do
     fill_in('word', :with => 'cat')
     fill_in('definition', :with => 'A meower.')
     click_button('Create')
-    click_button('Edit word: dog')  ##This is not a static element, and capybara can't find it.
+    click_button('Edit word: dog')  ##fails here
     fill_in('definition', :with => 'A barker.')
     click_button('Submit new definition')
     expect(page).to have_content('A barker.')
