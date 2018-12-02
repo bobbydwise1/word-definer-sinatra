@@ -52,7 +52,7 @@ _Ruby, Sinatra framework, Atom, , HTML, Git._
             word2.add
   * Output: [
               ["dog", "A string that defines dog per Webster."],
-              ["cat", "A string that defines cat per Webster."],
+              ["cat", ["A string that defines cat per Webster."]],
             ]
 
 * The ability to add more than one definition to a word.  Note this implies a find method and push method for the list.
@@ -60,7 +60,7 @@ _Ruby, Sinatra framework, Atom, , HTML, Git._
             word2.add("cat", "My custom definition of a cat")
   * Output: [
               ["dog", "A string that defines dog per Webster."],
-              ["cat", "A string that defines cat per Webster.", "My custom definition of a cat"],
+              ["cat", ["A string that defines cat per Webster.", "My custom definition of a cat"]],
             ]
 
 * The ability to find all word definitions based on a search term from the user.
@@ -70,8 +70,7 @@ _Ruby, Sinatra framework, Atom, , HTML, Git._
 
 ## Known bugs
 
-* Currently, you can't add new definitions to an existing word.
-* Integration spec testing is currently unfinished.
+* Integration spec testing is currently unfinished.  While Capybara easily recognizes static HTML elements, it appears that Capybara can't recognize dynamically generated HTML DOM elements, or I have not used the correct keywords in the Capybara "expects" line of code.
 
 ### License
 
