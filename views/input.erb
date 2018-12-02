@@ -29,9 +29,9 @@
   <% Word.all.each do |single_word| %>
   <div class="edit-form-box-sub container">
     <div class="row">
-      <form action="/worddef<%= single_word.id %>" method="get">
+      <form id="form<%= single_word.id %>" action="/worddef<%= single_word.id %>" method="get">
       <h6><%= single_word.dictionary_word %></h6>
-      <button type="button-primay button" name="select" value="<%= single_word.id %>">Edit word: <%= single_word.dictionary_word %></button>
+      <button id="button_word<%= single_word.id %>" type="button-primay button" name="select" value="<%= single_word.id %>">Edit word: <%= single_word.dictionary_word %></button>
       </form>
     </div>
   </div>
