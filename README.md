@@ -10,7 +10,7 @@ _Create a website application that allows children to write a list of words they
 
 ## Setup/Installation Requirements
 
-* Clone this repository using `git clone https://github.com/bobbydwise1/anagrams_antigrams.git`
+* Clone this repository using `git clone https://github.com/bobbydwise1/word-definer-sinatra.git`
 * Navigate to the downloaded repository using a terminal window.
 * Your computer must have Ruby installed.  In the terminal window at the working directory of the program, you will need to install some addtional Ruby Gems files.  Do this by putting this on the command line while connected to the internet:
   "$ bundle install
@@ -33,7 +33,8 @@ _Ruby, Sinatra framework, Atom, , HTML, Git._
 
 * Children should be able to add more words to the main list of words, and provide their own definitions.
 
-* (Optional):  Deploy the web application to the web app hosting site, Heroku.
+* Deploy the web application to the web app hosting site, Heroku.  The link for this is at:
+  
 
 ## Specifications
 
@@ -70,7 +71,7 @@ _Ruby, Sinatra framework, Atom, , HTML, Git._
 
 ## Known bugs
 
-* Integration spec testing is currently unfinished.  While Capybara easily recognizes static HTML elements, it appears that Capybara can't recognize dynamically generated HTML DOM elements, or I have not used the correct keywords in the Capybara "expects" line of code.
+* There appears to be a CSS formatting error.  Sometimes when switching between webpages, the CSS formatting is lost.
 
 ### License
 

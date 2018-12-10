@@ -2,29 +2,29 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/word')
-require ('rspec')
-require ('pry')
+require('rspec')
+require('pry')
 
 get ('/') do
-  erb(:input)
+  erb(:index)
 end
 
-post ('/user_input') do
+post ('/user_index') do
   new_word = Hash.new()
   new_word.store(:dictionary_word, params.fetch("word"))
   new_word.store(:definition_formal, params.fetch("definition"))
 
   new_word = Word.new(new_word)
   new_word.save
-  erb(:input)
+  erb(:index)
 end
 
 post ('/user_clear') do
   Word.clear
-  erb(:input)
+  erb(:index)
 end
 
-get ('/worddef:id') do
+get ('/worddef/:id') do
   id = params[:id]
   temp_word = Word.find_id(id)
   @temp_id = id
@@ -33,7 +33,7 @@ get ('/worddef:id') do
   erb(:worddef)
 end
 
-post ('/worddef:id') do
+post ('/worddef/:id') do
   id = params[:id]
   temp_word = Word.find_id(id)
   button_select = params.fetch('select')
@@ -48,7 +48,7 @@ post ('/worddef:id') do
     @output_word = temp_word.dictionary_word
     @output_def = temp_word.definition_formal
     @temp_id = id
-    erb(:input)
+    erb(:index)
   else
     return false
   end
