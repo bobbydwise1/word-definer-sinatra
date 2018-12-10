@@ -18,6 +18,7 @@ _Create a website application that allows children to write a list of words they
 * To run the program itself, go to the command line, and set the current working directory the same as the project's folder.
 * Type $ ruby app.rb at the terminal
 * Open your web browser and head to https://localhost:4567 to start the application.
+* The Heroku website this app is deployed on is https://powerful-hamlet-83937.herokuapp.com/
 
 ## Technologies Used
 
@@ -34,7 +35,8 @@ _Ruby, Sinatra framework, Atom, , HTML, Git._
 * Children should be able to add more words to the main list of words, and provide their own definitions.
 
 * Deploy the web application to the web app hosting site, Heroku.  The link for this is at:
-  
+
+https://powerful-hamlet-83937.herokuapp.com/
 
 ## Specifications
 
@@ -72,6 +74,7 @@ _Ruby, Sinatra framework, Atom, , HTML, Git._
 ## Known bugs
 
 * There appears to be a CSS formatting error.  Sometimes when switching between webpages, the CSS formatting is lost.
+* The Heroku website does not appear to be working.
 
 ### License
 
